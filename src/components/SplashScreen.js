@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { CSSTransition } from "react-transition-group";
 
 import '../style/App.css';
 import denina from '../img/denina.png';
