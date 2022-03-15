@@ -1,5 +1,5 @@
 // Bottoni
-
+import { useState } from "react";
 import { Button, Image } from "react-bootstrap";
 import { BiMicrophoneOff, BiMicrophone } from "react-icons/bi";
 
@@ -8,12 +8,21 @@ import rainSound from "../assets/sounds/Rain-sound.mp3";
 import penPlay from "../assets/img/penPlay.png";
 import penOptions from "../assets/img/penOptions.png";
 import penLogin from "../assets/img/penLogin.png";
+import penPlayWhite from "../assets/img/penPlayWhite.png";
+import penOptionsWhite from "../assets/img/penOptionsWhite.png";
+import penLoginWhite from "../assets/img/penLoginWhite.png";
 
 export const BtnPlay = () => {
+	const [state, setState] = useState(false);	// stato per la transizione
+
+	const enter = () => setState(true);
+	const leave = () => setState(false);
 
 	return(
 		<Image
-			src={penPlay}
+			src={state ? penPlayWhite: penPlay}
+			onMouseEnter={enter}
+			onMouseLeave={leave}
 			height={175}
 			width={325}
 			onClick={() => alert('Il gioco inizierà da qui')}
@@ -23,10 +32,16 @@ export const BtnPlay = () => {
 }
 
 export const BtnOptions = () => {
+	const [state, setState] = useState(false);
+
+	const enter = () => setState(true);
+	const leave = () => setState(false);
 
 	return(
 		<Image
-			src={penOptions}
+			src={state ? penOptionsWhite : penOptions}
+			onMouseEnter={enter}
+			onMouseLeave={leave}
 			height={175}
 			width={325}
 			onClick={() => alert('Opzioni')}
@@ -36,10 +51,17 @@ export const BtnOptions = () => {
 }
 
 export const BtnLogin = () => {
+	const [state, setState] = useState(false);
+
+	const enter = () => setState(true);
+	const leave = () => setState(false);
+
 
 	return(
 		<Image
-			src={penLogin}
+			src={state ? penLoginWhite : penLogin}
+			onMouseEnter={enter}
+			onMouseLeave={leave}
 			height={175}
 			width={325}
 			onClick={() => alert('Login')}
@@ -51,9 +73,10 @@ export const BtnLogin = () => {
 export const BtnMusic = () => {
 	const [playing, toggle] = useAudio(rainSound);
 
+
 	return(
 		<Button variant="secondary" onClick={toggle}>
-			{playing ? <BiMicrophone size={55} /> : <BiMicrophoneOff size={55} />}
+			{ playing ? <BiMicrophone size={55} /> : <BiMicrophoneOff size={55} />}
 		</Button>
 	)
 }

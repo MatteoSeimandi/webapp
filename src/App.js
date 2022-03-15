@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import SplashScreen from "./components/SplashScreen";
 import Title from "./components/Title";
 import { BtnPlay, BtnOptions, BtnLogin, BtnMusic} from "./components/Buttons";
+import Footer from "./components/Footer";
 
 import './style/App.css';
 
@@ -27,16 +28,7 @@ const App = () => {
 					</Col>
 				</Row>
 				<Row className="mb-5 w-100 position-absolute bottom-0 start-50 translate-middle-x ">
-					<Col className="mt-5">
-						<p className="text-center text-white fs-1 txt-pixel">
-							The Lost Key Team
-						</p>
-					</Col>
-					<Col className="mt-5" >
-						<p className="text-center text-white fs-1 txt-pixel">
-							Pre-Alpha 0.1.0
-						</p>
-					</Col>
+					<Footer />
 				</Row>
 				<Row className="mb-3 position-absolute bottom-0 start-50 translate-middle">
 					<Col>
