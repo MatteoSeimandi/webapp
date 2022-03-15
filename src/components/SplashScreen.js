@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
-import { BtnMusic } from "./Buttons";
 import '../style/App.css';
 import denina from '../img/denina.png';
 
@@ -11,7 +10,7 @@ const SplashScreen = () => {
 	useEffect( () => {
 		const dissappear = setTimeout(() => {
 			setAnimate(false);
-		}, 4000)
+		}, 5000)
 
 		return () => clearInterval(dissappear);
 	}, []);
@@ -20,7 +19,7 @@ const SplashScreen = () => {
 		<>{
 			animate && (
 			<Container fluid className="complete d-flex align-items-center justify-content-center p-0 m-0">
-				<Row>
+				<Row className="splash">
 					<Col className="d-flex justify-content-end">
 						<Image src={denina} fluid />
 					</Col>
