@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import { CSSTransition } from "react-transition-group";
 
 import '../style/App.css';
 import denina from '../img/denina.png';
@@ -16,7 +17,8 @@ const SplashScreen = () => {
 	}, []);
 
 	return(
-		<>{
+		<>
+		{
 			animate && (
 			<Container fluid className="complete d-flex align-items-center justify-content-center p-0 m-0">
 				<Row className="splash">
