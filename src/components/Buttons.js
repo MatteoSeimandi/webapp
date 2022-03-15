@@ -3,6 +3,8 @@
 import { Button, Image } from "react-bootstrap";
 import { BiMicrophoneOff, BiMicrophone } from "react-icons/bi";
 
+import '../style/App.css';
+
 import { useAudio } from "../utils/useAudio";
 import rainSound from "../assets/sounds/Rain-sound.mp3";
 import penPlay from "../assets/img/penPlay.png";
@@ -49,7 +51,7 @@ export const BtnLogin = () => {
 }
 
 export const BtnMusic = () => {
-	const [playing, toggle] = useAudio(rainSound);
+	const [playing, toggle] = useAudio(rainSound, true);
 
 	return(
 		<Button variant="secondary" onClick={toggle}>
